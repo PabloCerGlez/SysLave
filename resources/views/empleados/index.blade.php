@@ -1,1 +1,1 @@
-inicio(despligue de datos)
+Inicio(despligue de datos)

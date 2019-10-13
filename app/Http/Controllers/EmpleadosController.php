@@ -35,7 +35,13 @@ class EmpleadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosEmpleado=request()->except('_token');
+        if($request->hasFile('Foto')){
+      $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public');
+        }
+        Empleados::insert($datosEmpleado);
+
+        return response()->json($datosEmpleado);
     }
 
     /**
